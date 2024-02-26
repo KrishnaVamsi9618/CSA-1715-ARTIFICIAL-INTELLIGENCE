@@ -1,0 +1,34 @@
+% Facts: Birds and their flying ability
+can_fly(eagle).
+can_fly(sparrow).
+can_fly(albatross).
+cannot_fly(penguin).
+cannot_fly(ostrich).
+cannot_fly(emu).
+
+% Rules: Define whether a bird can fly or not
+bird_can_fly(Bird) :-
+    can_fly(Bird),
+    write(Bird), write(' can fly!'), nl.
+
+bird_can_fly(Bird) :-
+    cannot_fly(Bird),
+    write(Bird), write(' cannot fly.'), nl.
+
+% Example queries
+% Querying if a particular bird can fly
+% ?- bird_can_fly(eagle).
+% Output: eagle can fly!
+%
+% ?- bird_can_fly(penguin).
+% Output: penguin cannot fly.
+%
+% Listing all birds and their flying abilities
+% ?- bird_can_fly(Bird).
+% Output:
+% eagle can fly!
+% sparrow can fly!
+% albatross can fly!
+% penguin cannot fly.
+% ostrich cannot fly.
+% emu cannot fly.
